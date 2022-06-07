@@ -1,5 +1,3 @@
-# -*- encoding: utf-8 -*-
-
 # Copyright (c) Microsoft Corporation
 # All rights reserved.
 #
@@ -17,7 +15,7 @@
 # See the Apache Version 2.0 License for specific language governing
 # permissions and limitations under the License.
 
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'yammer/version'
 require 'date'
@@ -27,27 +25,26 @@ Gem::Specification.new do |s|
   s.version          = Yammer::Version
 
   s.date             = Date.today.to_s
-  s.summary          = "Yammer API Client"
+  s.summary          = 'Yammer API Client'
 
   s.description      = "A Ruby wrapper for accessing Yammer's REST API"
-  s.authors          = ["Kevin Mutyaba"]
-  s.email            = %q{kmutyaba@yammer-inc.com}
+  s.authors          = ['Kevin Mutyaba']
+  s.email            = 'kmutyaba@yammer-inc.com'
   s.homepage         = 'http://yammer.github.io/yam'
   s.rubygems_version = Yammer::Version
   s.files            = `git ls-files`.split("\n")
   s.require_paths    = ['lib']
 
+  s.metadata['allowed_push_host'] = 'https://rubygems.bonusly.dev/private'
+
   s.licenses         = ['MIT']
-  s.test_files       = Dir.glob("spec/**/*")
+  s.test_files       = Dir.glob('spec/**/*')
 
-  s.cert_chain       = ['certs/public.pem']
-  s.signing_key      = File.expand_path("~/.gem/certs/private_key.pem") if $0 =~ /gem\z/
-
-  s.add_dependency 'oj', '~> 2.14'
-  s.add_dependency 'multi_json', '~> 1.8'
-  s.add_dependency 'rest-client'
   s.add_dependency 'addressable', '~> 2.4'
+  s.add_dependency 'multi_json', '~> 1.8'
   s.add_dependency 'oauth2-client', '~> 2.0'
+  s.add_dependency 'oj', '~> 2.14'
+  s.add_dependency 'rest-client'
 
   s.add_development_dependency 'rake', '~> 13'
   s.add_development_dependency 'rspec', '~> 0'
