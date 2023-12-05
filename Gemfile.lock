@@ -5,7 +5,7 @@ PATH
       addressable (~> 2.4)
       multi_json (~> 1.8)
       oauth2-client (~> 2.0)
-      oj (~> 2.14)
+      oj
       rest-client
 
 GEM
