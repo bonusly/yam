@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.files            = `git ls-files`.split("\n")
   s.require_paths    = ['lib']
 
-  s.metadata['allowed_push_host'] = 'https://rubygems.bonusly.dev/private'
+  s.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com/bonusly'
 
   s.licenses         = ['MIT']
   s.test_files       = Dir.glob('spec/**/*')
